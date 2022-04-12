@@ -19,9 +19,9 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  isGrounded = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.5f, ground);
+        isGrounded = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 2f);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce * Time.deltaTime, ForceMode.Impulse);
         }
